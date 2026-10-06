@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MY APP</title>
+</head>
+<body>
+    <h1>Welcome to my profile page!</h1>
+    <hr>
+    <fieldset style = 'width: "220px"'>
+        <form method ="post">
+            <h6> enter data </h6>
+            <span> upload your profilr pic :</span>
+            <input type ="text" name="pic" id =""><br><br>
+            <input type = "text" name="uname" id=""placeholder= "enter your name"><br><br>
+            <input type = "email" name = "email" id = "" placeholder= "enter your email"><br><br>
+            <input type = "text" name = "location" id = "" placeholder=" enter your location"><br><br>
+            <input type = "text" name = "skills" id = "" placeholder=" enter your Skills"><br><br>
+            <input type = "text" name = "experience" id = "" placeholder=" enter your experience level"><br><br>
+            <input type = "text" name = "bio" id ="" placeholder="bio"><br>
+ 
+            <button type = "submit"> Submit </button>
+        </form>
+    </fieldset>
+    <h3> MY PROFILE </h3>
+    {# retriving profile data #}
+    {% if data %}
+        <hr>
+        <img src = "{{data['pic']}}" alt = "dp" width = "220">
+        <p><b> Username :</b> {{data['uname']}} </p><br>
+        <p><b>Email: </b> {{data['email']}}</p><br>
+        <p><b>Location : {{data['location']}}</b></p><br>
+        <p><b>SKILL SET : {{data['skills']}}</b></p><br><br>
+        <P><b>Experience: {{data['experience']}}</b></P><br>
+        <p><b>Short BIO: {{data['bio']}} </b></p>
+
+    {% endif %}
+  
+</body>
+</html>
